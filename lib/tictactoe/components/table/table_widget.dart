@@ -14,7 +14,7 @@ class TableWidget extends StatelessWidget {
 
   Widget _table() {
     return Table(
-      border: TableBorder.all(color: Colors.black, width: 0.5),
+      border: TableBorder.symmetric(inside: BorderSide(color: Colors.blue[800], width: 2)),
       children: _tableRowList(),
     );
   }
