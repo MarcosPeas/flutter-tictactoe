@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tic_tac_toe/tictactoe/components/cell/cell_widget.dart';
+import 'package:tic_tac_toe/modules/tictactoe/components/cell/cell_widget.dart';
 
 class TableWidget extends StatelessWidget {
   @override
@@ -28,6 +28,6 @@ class TableWidget extends StatelessWidget {
       }
       tableRowList.add(TableRow(children: cellList));
     }
-  return tableRowList;
+    return tableRowList;
   }
 }

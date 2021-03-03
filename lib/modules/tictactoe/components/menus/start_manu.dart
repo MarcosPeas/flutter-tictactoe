@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:tic_tac_toe/modules/tictactoe/tic_tac_toe_controller.dart';
 import 'package:tic_tac_toe/state_machine/states/prepare_state.dart';
-import 'package:tic_tac_toe/tictactoe/tic_tac_toe_controller.dart';
 
 class StartMenu extends StatelessWidget {
   TicTacToeController _tacToeController;

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:tic_tac_toe/tictactoe/components/cell/cell_controller.dart';
+import 'package:tic_tac_toe/modules/tictactoe/components/cell/cell_controller.dart';
 
 class CellWidget extends StatelessWidget {
   CellController _controller = CellController();
@@ -40,7 +40,7 @@ class CellWidget extends StatelessWidget {
   Widget _cross() {
     return Icon(
       Icons.clear,
-      size: 76,
+      size: 88,
     );
   }
 
