@@ -15,6 +15,9 @@ class AppModule extends MainModule {
   @override
   List<ModularRouter> get routers => [
         ModularRouter('/', child: (_, args) => SplashScreen()),
-        ModularRouter('/tic_tac_toe', module: TicTacToeModule(), transition: TransitionType.rotate)
+        ModularRouter('/tic_tac_toe',
+            module: TicTacToeModule(),
+            transition: TransitionType.size,
+            duration: Duration(milliseconds: 1200))
       ];
 }

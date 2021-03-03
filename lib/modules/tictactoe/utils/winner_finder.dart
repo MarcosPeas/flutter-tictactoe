@@ -6,10 +6,41 @@ class WinnerFinder {
 
   WinnerFinder(this._cells);
 
+  bool hasWinnerByType(CellType cellType) {
+    _findDiagonal01();
+    if (_winners.isNotEmpty) {
+      return _winners[0].cellType == cellType;
+    }
+    _findDiagonal02();
+    if (_winners.isNotEmpty) {
+      return _winners[0].cellType == cellType;
+    }
+    _findHorizontal();
+    if (_winners.isNotEmpty) {
+      return _winners[0].cellType == cellType;
+    }
+    _findVertical();
+    if (_winners.isNotEmpty) {
+      return _winners[0].cellType == cellType;
+    }
+    return false;
+  }
+
+  bool isFull(){
+    List<Cell> list = _cells.values.toList();
+    for (Cell cell in list) {
+      if(cell.cellType == null || cell.cellType == CellType.NULL){
+        return false;
+      }
+    }
+    return true;
+  }
+
   List<Cell> findWinners() {
     _findHorizontal();
     _findVertical();
-    _findDiagonal();
+    _findDiagonal01();
+    _findDiagonal02();
     return _winners;
   }
 
@@ -37,16 +68,19 @@ class WinnerFinder {
     }
   }
 
-  void _findDiagonal() {
+  void _findDiagonal01() {
     _find(
       _cells['0-0'],
       _cells['1-1'],
       _cells['2-2'],
     );
+  }
+
+  void _findDiagonal02() {
     _find(
-      _cells['1-2'],
+      _cells['0-0'],
       _cells['1-1'],
-      _cells['2-1'],
+      _cells['2-2'],
     );
   }
 

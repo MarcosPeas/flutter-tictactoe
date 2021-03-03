@@ -14,7 +14,7 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   void _next() async {
-    await Future.delayed(Duration(milliseconds: 1500));
+    await Future.delayed(Duration(milliseconds: 1800));
     Modular.to.pushReplacementNamed('/tic_tac_toe');
   }
 
@@ -27,7 +27,7 @@ class _SplashScreenState extends State<SplashScreen> {
           child: Center(
             child: Text(
               'Jogo da Velha',
-              style: TextStyle(fontSize: 30),
+              style: TextStyle(fontSize: 30, fontWeight: FontWeight.w600),
             ),
           ),
         ),
