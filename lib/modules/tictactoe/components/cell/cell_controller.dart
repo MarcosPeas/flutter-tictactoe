@@ -13,6 +13,8 @@ abstract class _CellController with Store {
 
   @observable
   CellType cellType = CellType.NULL;
+
+  String get name => '$x-$y';
 }
 
 enum CellType { CROSS, CIRCLE, NULL }

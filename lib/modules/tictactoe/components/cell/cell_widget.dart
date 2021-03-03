@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:tic_tac_toe/modules/tictactoe/components/cell/cell_controller.dart';
+import 'package:tic_tac_toe/modules/tictactoe/tic_tac_toe_controller.dart';
 
 class CellWidget extends StatelessWidget {
   CellController _controller = CellController();
+  TicTacToeController _tacToeController = Modular.get();
+
+  Widget _aspectRatio;
 
   CellWidget(int x, int y) {
     _controller.x = x;
     _controller.y = y;
+    _tacToeController.addCellController(_controller);
   }
 
   @override
@@ -17,9 +23,9 @@ class CellWidget extends StatelessWidget {
         aspectRatio: 1 / 1,
         child: GestureDetector(
           onTap: () {
-            print('${_controller.x}-${_controller.y}');
-            int n = (_controller.x + _controller.y) % 2;
-            _controller.cellType = n == 0 ? CellType.CROSS : CellType.CIRCLE;
+            if (_controller.cellType == CellType.NULL) {
+              _tacToeController.selectCell(_controller);
+            }
           },
           child: Container(
             color: _color(),

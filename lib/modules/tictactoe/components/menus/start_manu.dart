@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:tic_tac_toe/modules/tictactoe/state_machine/states/player_state.dart';
+import 'package:tic_tac_toe/modules/tictactoe/state_machine/states/prepare_state.dart';
 import 'package:tic_tac_toe/modules/tictactoe/tic_tac_toe_controller.dart';
-import 'package:tic_tac_toe/state_machine/states/prepare_state.dart';
 
 class StartMenu extends StatelessWidget {
   TicTacToeController _tacToeController;
@@ -41,7 +42,7 @@ class StartMenu extends StatelessWidget {
           ),
           RaisedButton(
             onPressed: () {
-              _tacToeController.changeState(PrepareState());
+              _tacToeController.changeState(PlayerState());
             },
             child: Text('Iniciar'),
           ),
